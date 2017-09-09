@@ -5,7 +5,7 @@ public enum GameStateType
 {
   MainMenu,
   Editor,
-  Game,
+  Simulation,
   End
 }
 public class GameStateManager : MonoBehaviour 
@@ -14,6 +14,11 @@ public class GameStateManager : MonoBehaviour
   List<GameState> states; 
 	void Start () 
   {
+    states.Add(new MenuState());
+    states.Add(new EditorState());
+    states.Add(new SimulationState());
+    states.Add(new EndState());
+    states[(int)gameState].Start();
 	}
 	
 	// Update is called once per frame

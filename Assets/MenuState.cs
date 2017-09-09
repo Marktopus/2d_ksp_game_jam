@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EditorState : GameState 
+public class MenuState : GameState 
 {
 	// Use this for initialization
 	public override void Start () 
