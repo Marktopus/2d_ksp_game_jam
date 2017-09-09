@@ -10,22 +10,22 @@ public enum GameStateType
 }
 public class GameStateManager : MonoBehaviour 
 {
-  GameStateType gameState = GameStateType.Editor;
-  List<GameState> states; 
-	void Start () 
+  GameStateType gameState = GameStateType.MainMenu;
+  List<GameState> states = new List<GameState>(); 
+  void Start () 
   {
     states.Add(new MenuState());
     states.Add(new EditorState());
     states.Add(new SimulationState());
     states.Add(new EndState());
     states[(int)gameState].Start();
-	}
-	
-	// Update is called once per frame
-	void Update () 
+  }
+  
+  // Update is called once per frame
+  void Update () 
   {
     states[(int)gameState].Update();
-	}
+  }
 
   public void ChangeState(GameStateType newState)
   {
