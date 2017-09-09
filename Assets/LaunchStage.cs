@@ -17,6 +17,7 @@ public class LaunchStage : MonoBehaviour
   public void Update(){ }
   public void BeginStage()
   {
+    stageState = StageState.Started;
     foreach(ShipPart p in parts)
     {
       p.Launch();
@@ -41,6 +42,9 @@ public class LaunchStage : MonoBehaviour
   public void EndStage()
   {
     stageState = StageState.Finished;
-    // detach logic probably
+    foreach(ShipPart p in parts)
+    {
+      p.Detach();
+    }
   }
 }

@@ -27,6 +27,10 @@ public class ShipPart : MonoBehaviour
 	void Update () 
   {
     // at some point we'll get to end state here		
+    if(partState == StageState.Started)
+    {
+      // do things i guess
+    }
 	}
 
   public virtual StageState GetState()
@@ -34,8 +38,13 @@ public class ShipPart : MonoBehaviour
     return partState;
   }
   
-  public void Launch()
+  public virtual void Launch()
   {
+    partState = StageState.Started;
+  }
 
+  public virtual void Detach()
+  {
+    partState = StageState.Finished;
   }
 }
