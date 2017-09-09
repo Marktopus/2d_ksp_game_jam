@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipPhysicsContoller : MonoBehaviour {
+public class ShipPhysicsController : MonoBehaviour {
 	private Rigidbody2D parentBody;
 
 	public float throttle = 0;
