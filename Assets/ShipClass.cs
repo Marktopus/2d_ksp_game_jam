@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShipClass : MonoBehaviour
 {
-  public List<LaunchStage> stages;
+  public List<LaunchStage> stages = new List<LaunchStage>();
   public int currentStage = 0;
 
   // Use this for initialization
@@ -16,9 +16,12 @@ public class ShipClass : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if(stages[currentStage].stageState == StageState.Finished)
+    if(stages.Count > currentStage)
     {
-      ++currentStage;
+      if(stages[currentStage].stageState == StageState.Finished)
+      {
+        ++currentStage;
+      }
     }
   }
 
