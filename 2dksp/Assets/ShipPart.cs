@@ -16,8 +16,10 @@ public class ShipPart : MonoBehaviour
 {
   StageState partState;
   public double weight;
+  public List<ShipPart> connectingParts;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+  {
 		
 	}
 	
