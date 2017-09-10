@@ -48,11 +48,10 @@ public class LaunchStage
 
   public float ComputeMass()
   {
-    float mass = 0;
+    float mass = 0.0f;
     foreach(ShipPart p in parts)
     {
-      mass += p.mass;
-      mass += p.mass;
+      mass += p.GetMass();
     }
     return mass;
   }

@@ -13,18 +13,18 @@ public enum PartType
 
 public class ShipPart : MonoBehaviour 
 {
-  StageState partState;
+  public StageState partState;
   public float mass;
   public Vector2 centerOfMass;
   public List<ShipPart> connectingParts;
 	// Use this for initialization
-	void Start () 
+	public virtual void Start () 
   {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public virtual void Update () 
   {
     // at some point we'll get to end state here		
     if(partState == StageState.Started)
@@ -46,5 +46,10 @@ public class ShipPart : MonoBehaviour
   public virtual void Detach()
   {
     partState = StageState.Finished;
+  }
+
+  public virtual float GetMass()
+  {
+    return mass;
   }
 }

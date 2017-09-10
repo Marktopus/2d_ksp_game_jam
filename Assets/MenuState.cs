@@ -10,6 +10,8 @@ public class MenuState : GameState
   {
     base.Start();
     Debug.Log("menu");
+
+    
   }
   
   // Update is called once per frame

@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnginePart : ThrustPart 
+public class PlanetComp : MonoBehaviour 
 {
 	// Use this for initialization
-	public override void Start () 
+	void Start () 
   {
-    base.Start();	
 	}
 	
 	// Update is called once per frame
-	public override void Update () 
-  {
-    base.Update();
+	void Update () {
+		
 	}
 }
