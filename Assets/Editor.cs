@@ -38,6 +38,9 @@ public class Editor {
 			part.transform.position = new Vector3(0, 20, 0);
 		} else {
 			part.transform.position = ActivePart.transform.position + new Vector3(0, -1, 0);
+			SpriteRenderer rendrr = part.GetComponent<SpriteRenderer>();
+			SpriteRenderer lastRendrr = ActivePart.GetComponent<SpriteRenderer>();
+			rendrr.sortingOrder = lastRendrr.sortingOrder - 1;
 		}
 		ActivePart = part;
 		part.transform.parent = ShipContainer.transform;
