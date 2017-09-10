@@ -66,6 +66,7 @@ public class SimulationState : GameState
     {
       Rigidbody2D body = planet.GetComponent<Rigidbody2D>();
       Vector2 gravDir = planet.transform.position - spacePlayer.transform.position;
+      gravDir.Normalize();
 
       double gravForce = (double)body.mass * gravConst / (double)(body.transform.localScale.x * body.transform.localScale.x);
       playerBody.AddForce((float)gravForce * gravDir);
