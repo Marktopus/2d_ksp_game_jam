@@ -34,7 +34,7 @@ public class GameStateManager : MonoBehaviour
         new Vector3(
           Random.Range(-100000000.0f, 100000000.0f), 
           Random.Range(-100000000.0f, 100000000.0f), 
-          -40.0f);
+          -41.0f);
 
       newObj.AddComponent<SpriteRenderer>().sprite = planetSprite;
       Rigidbody2D body = newObj.AddComponent<Rigidbody2D>();
@@ -50,9 +50,9 @@ public class GameStateManager : MonoBehaviour
     startDir.Normalize();
     startPos = (startDir * planets[startingPlanet].transform.localScale.x) + 
                 (Vector2)planets[startingPlanet].transform.position;
-    GameObject spacePlayer = GameObject.Find("SpacePlayer");
-    spacePlayer.transform.localPosition = new Vector3(startPos.x, startPos.y, spacePlayer.transform.position.z);
-    spacePlayer.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, Vector2.Angle(new Vector2(0.0f, 1.0f), startDir));
+    GameObject player = GameObject.Find("Player");
+    player.transform.localPosition = new Vector3(startPos.x, startPos.y, player.transform.position.z);
+    player.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, Vector2.Angle(new Vector2(0.0f, 1.0f), startDir));
 
   }
   

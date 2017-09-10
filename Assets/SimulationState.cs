@@ -44,9 +44,9 @@ public class SimulationState : GameState
 	public override void Update () 
   {
     base.Update();
+    GameObject player = GameObject.Find("Player");
     if(Input.GetKeyDown(KeyCode.Space))
     {
-      GameObject player = GameObject.Find("Player");
       player.GetComponent<ShipClass>().Launch();
       Debug.Log("launch");
     }
@@ -57,7 +57,7 @@ public class SimulationState : GameState
     float scale = spaceCam.orthographicSize * 0.025f;
     spacePlayer.transform.localScale = new Vector3(scale, scale, 1.0f);
 
-    Rigidbody2D playerBody = spacePlayer.GetComponent<Rigidbody2D>();
+    Rigidbody2D playerBody = player.GetComponent<Rigidbody2D>();
     GameStateManager gsm = GameObject.Find("World").GetComponent<GameStateManager>();
     List<GameObject> planets = gsm.planets;
     
