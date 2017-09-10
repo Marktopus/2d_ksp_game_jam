@@ -34,7 +34,7 @@ public class GameStateManager : MonoBehaviour
         new Vector3(
           Random.Range(-10000.0f, 10000.0f), 
           Random.Range(-10000.0f, 10000.0f), 
-          -15.0f);
+          0.0f);
       newObj.AddComponent<SpriteRenderer>();
       newObj.GetComponent<SpriteRenderer>().sprite = planetSprite;
       planets.Add(newObj);
@@ -48,6 +48,8 @@ public class GameStateManager : MonoBehaviour
     GameObject spacePlayer = GameObject.Find("SpacePlayer");
     spacePlayer.transform.localPosition = new Vector3(startPos.x, startPos.y, 0.0f);
     spacePlayer.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, Vector2.Angle(new Vector2(0.0f, 1.0f), startDir));
+    GameObject spaceObj = GameObject.Find("Space");
+    spacePlayer.transform.parent = spaceObj.transform;
   }
   
   // Update is called once per frame
