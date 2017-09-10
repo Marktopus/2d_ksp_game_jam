@@ -9,13 +9,13 @@ public enum PartType
   CargoHold,
   Engine,
   Stager
-
 }
 
 public class ShipPart : MonoBehaviour 
 {
   StageState partState;
-  public double weight;
+  public float mass;
+  public Vector2 centerOfMass;
   public List<ShipPart> connectingParts;
 	// Use this for initialization
 	void Start () 

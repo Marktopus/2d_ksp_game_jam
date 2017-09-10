@@ -7,7 +7,6 @@ public class CabinPart : ShipPart
 	// Use this for initialization
 	void Start () 
   {
-    weight = 1.0;
 	}
 	
 	// Update is called once per frame

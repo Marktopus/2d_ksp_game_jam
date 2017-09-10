@@ -9,12 +9,19 @@ public class EditorState : GameState
   public override void Start () 
   {
     base.Start();
+    Debug.Log("editor");
   }
   
   // Update is called once per frame
   public override void Update () 
   {
     base.Update();
+    if(Input.GetKeyDown(KeyCode.Space))
+    {
+      GameObject world = GameObject.Find("World");
+      GameStateManager gsm = world.GetComponent<GameStateManager>();
+      gsm.ChangeState(GameStateType.Simulation);
+    }
   }
 
   public override void End()

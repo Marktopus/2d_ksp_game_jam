@@ -9,12 +9,10 @@ public enum StageState
   Finished
 };
 
-public class LaunchStage : MonoBehaviour
+public class LaunchStage
 {
-  public List<ShipPart> parts;
+  public List<ShipPart> parts = new List<ShipPart>();
   public StageState stageState = StageState.Waiting;
-  public void Start(){ }
-  public void Update(){ }
   public void BeginStage()
   {
     stageState = StageState.Started;
@@ -46,5 +44,26 @@ public class LaunchStage : MonoBehaviour
     {
       p.Detach();
     }
+  }
+
+  public float ComputeMass()
+  {
+    float mass = 0;
+    foreach(ShipPart p in parts)
+    {
+      mass += p.mass;
+      mass += p.mass;
+    }
+    return mass;
+  }
+
+  public Vector2 ComputeCenterOfMass()
+  {
+    Vector2 center = new Vector2();
+    foreach(ShipPart p in parts)
+    {
+      center += p.centerOfMass + (Vector2)p.GetComponent<Transform>().position;
+    }
+    return center;
   }
 }

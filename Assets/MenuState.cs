@@ -9,6 +9,7 @@ public class MenuState : GameState
   public override void Start () 
   {
     base.Start();
+    Debug.Log("menu");
   }
   
   // Update is called once per frame

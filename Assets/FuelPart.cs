@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnginePart : ThrustPart 
+public class FuelPart : ShipPart 
 {
+  public float fuelMass;
 	// Use this for initialization
 	void Start () 
   {
@@ -13,6 +14,6 @@ public class EnginePart : ThrustPart
 	// Update is called once per frame
 	void Update () 
   {
-		
+    		
 	}
 }
