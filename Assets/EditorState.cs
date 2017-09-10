@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class EditorState : GameState 
 {
+  GameObject EditorUI;
+
+  public EditorState () : base () {
+    EditorUI = GameObject.Find("EditorUI");
+    EditorUI.SetActive(false);
+  }
+
   // Use this for initialization
   public override void Start () 
   {
     base.Start();
     Debug.Log("editor");
+    EditorUI.SetActive(true);
   }
   
   // Update is called once per frame
@@ -26,6 +34,7 @@ public class EditorState : GameState
 
   public override void End()
   {
+    EditorUI.SetActive(false);
     base.End();
   }
 }
