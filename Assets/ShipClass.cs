@@ -40,7 +40,6 @@ public class ShipClass : MonoBehaviour
     foreach(LaunchStage stage in stages)
     {
       float mass = stage.ComputeMass();
-      Debug.Log(mass);
       body.mass += mass;
     }
   }

@@ -19,7 +19,6 @@ public class ThrustPart : ShipPart
     if(partState == StageState.Started)
     {
       base.Update();
-      Debug.Log("butts");
       float consumed = 0.0f;
       foreach(FuelPart part in fuelParts)	
       {

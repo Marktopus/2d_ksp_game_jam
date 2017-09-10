@@ -61,14 +61,16 @@ public class SimulationState : GameState
     GameStateManager gsm = GameObject.Find("World").GetComponent<GameStateManager>();
     List<GameObject> planets = gsm.planets;
     
-    double gravConst = 6.67 * Mathf.Pow(10.0f, -11.0f);
+    double gravConst = 6.67 * Mathf.Pow(10.0f, -4.0f);
     foreach(GameObject planet in planets)
     {
       Rigidbody2D body = planet.GetComponent<Rigidbody2D>();
       Vector2 gravDir = planet.transform.position - spacePlayer.transform.position;
+
       gravDir.Normalize();
 
-      double gravForce = (double)body.mass * gravConst / (double)(body.transform.localScale.x * body.transform.localScale.x);
+      double gravForce = (double)body.mass * gravConst / (double)(gravDir.SqrMagnitude());
+      Debug.Log(gravForce);
       playerBody.AddForce((float)gravForce * gravDir);
     }
 	}

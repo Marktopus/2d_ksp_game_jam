@@ -17,6 +17,7 @@ public class FarCam : MonoBehaviour
     Transform targetTr = target.GetComponent<Transform>();
     if(targetTr.position.y > 10000.0f)
     {
+      
       // switch to a view of the solar system
     }
 	}

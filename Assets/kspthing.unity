@@ -308,7 +308,7 @@ MonoBehaviour:
   fuelParts:
   - {fileID: 2060387160}
   consumptionRate: 0.1
-  massToForce: 1e+9
+  massToForce: 500000
 --- !u!212 &79992625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 79992622}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 09c8bd1b00304254ea81c563da1d356d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -395,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &88140553
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1531,7 +1531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1945422539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: 0}
   connectingParts:
   - {fileID: 79992624}
-  fuelMass: 100
+  fuelMass: 10
 --- !u!212 &2060387161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1790,7 +1790,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 100000
+  orthographic size: 1000
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
