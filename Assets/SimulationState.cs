@@ -56,6 +56,20 @@ public class SimulationState : GameState
     Camera spaceCam = spaceCamObj.GetComponent<Camera>();
     float scale = spaceCam.orthographicSize * 0.025f;
     spacePlayer.transform.localScale = new Vector3(scale, scale, 1.0f);
+
+    Rigidbody2D playerBody = spacePlayer.GetComponent<Rigidbody2D>();
+    GameStateManager gsm = GameObject.Find("World").GetComponent<GameStateManager>();
+    List<GameObject> planets = gsm.planets;
+    
+    double gravConst = 6.67 * Mathf.Pow(10.0f, -11.0f);
+    foreach(GameObject planet in planets)
+    {
+      Rigidbody2D body = planet.GetComponent<Rigidbody2D>();
+      Vector2 gravDir = planet.transform.position - spacePlayer.transform.position;
+
+      double gravForce = (double)body.mass * gravConst / (double)(body.transform.localScale.x * body.transform.localScale.x);
+      playerBody.AddForce((float)gravForce * gravDir);
+    }
 	}
 
   public override void End()

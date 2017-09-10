@@ -28,15 +28,20 @@ public class GameStateManager : MonoBehaviour
     for(int i = 0; i < 10; ++i)
     {
       GameObject newObj = new GameObject();
-      float radius = Random.Range(100.0f, 500.0f);
+      float radius = Random.Range(100000.0f, 500000.0f);
       newObj.transform.localScale = new Vector3(radius, radius, 1.0f);
       newObj.transform.position = 
         new Vector3(
-          Random.Range(-10000.0f, 10000.0f), 
-          Random.Range(-10000.0f, 10000.0f), 
-          0.0f);
-      newObj.AddComponent<SpriteRenderer>();
-      newObj.GetComponent<SpriteRenderer>().sprite = planetSprite;
+          Random.Range(-100000000.0f, 100000000.0f), 
+          Random.Range(-100000000.0f, 100000000.0f), 
+          -40.0f);
+
+      newObj.AddComponent<SpriteRenderer>().sprite = planetSprite;
+      Rigidbody2D body = newObj.AddComponent<Rigidbody2D>();
+
+      float density = 5.51f;
+      body.gravityScale = 0.0f;
+      body.mass = density * Mathf.PI * radius * radius;
       planets.Add(newObj);
     }
 
@@ -46,10 +51,9 @@ public class GameStateManager : MonoBehaviour
     startPos = (startDir * planets[startingPlanet].transform.localScale.x) + 
                 (Vector2)planets[startingPlanet].transform.position;
     GameObject spacePlayer = GameObject.Find("SpacePlayer");
-    spacePlayer.transform.localPosition = new Vector3(startPos.x, startPos.y, 0.0f);
+    spacePlayer.transform.localPosition = new Vector3(startPos.x, startPos.y, spacePlayer.transform.position.z);
     spacePlayer.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, Vector2.Angle(new Vector2(0.0f, 1.0f), startDir));
-    GameObject spaceObj = GameObject.Find("Space");
-    spacePlayer.transform.parent = spaceObj.transform;
+
   }
   
   // Update is called once per frame

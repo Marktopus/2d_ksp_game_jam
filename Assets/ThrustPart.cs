@@ -34,24 +34,8 @@ public class ThrustPart : ShipPart
       Rigidbody2D body = player.GetComponent<Rigidbody2D>();
       Vector2 newForce = new Vector2(0, massToForce * consumed);
 
-
       newForce = gameObject.transform.TransformVector(newForce);
       body.AddForceAtPosition(newForce, gameObject.transform.position);
-
-      Vector3 toRotate = gameObject.transform.position - player.transform.position;
-
-
-      GameStateManager gsm = GameObject.Find("World").GetComponent<GameStateManager>();
-      GameObject spacePlayer = GameObject.Find("SpacePlayer");
-      Rigidbody2D spaceBody = spacePlayer.GetComponent<Rigidbody2D>();
-      Vector3 playerRot = player.transform.localEulerAngles;
-      Quaternion rotation = Quaternion.Euler(0.0f, 0.0f, player.transform.localEulerAngles.z - spacePlayer.transform.localEulerAngles.z);
-
-      toRotate = rotation * toRotate;
-      newForce = rotation * newForce;
-
-      
-      spaceBody.AddForceAtPosition(newForce * 0.01f, spaceBody.transform.position + toRotate);
     }
 	}
 
