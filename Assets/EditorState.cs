@@ -6,8 +6,12 @@ using UnityEngine;
 public class EditorState : GameState 
 {
   GameObject EditorUI;
+  GameObject World;
+  Editor Editor;
 
   public EditorState () : base () {
+    World = GameObject.Find("World");
+    Editor = new Editor(World);
     EditorUI = GameObject.Find("EditorUI");
     EditorUI.SetActive(false);
   }

@@ -1,20 +1,33 @@
-﻿using System.Collections;
+﻿// TODO non-hardcoded parts
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Editor {
-	GameObject Player;
+	GameObject ShipContainer;
+	Dictionary<string, GameObject> PrefabDict;
 
-	// Use this for initialization
-	public Editor () {
-		Player = GameObject.Find("Player");
-	}
-	
-	public void Start () {
-		Player.transform.position += new Vector3(0, 10, 0);
+	public Editor (GameObject shipContainer) {
+		ShipContainer = shipContainer;
+		BuildPrefabDict();
+		AddListeners();
 	}
 
-	public void End () {
+	// TODO load from file
+	public void BuildPrefabDict () {
+		PrefabDict = new Dictionary<string, GameObject>();
+		PrefabDict.Add("CapsuleA", Resources.Load("CapsuleAPrefab") as GameObject);
+	}
 
+	public void AddListeners () {
+		(GameObject.Find("CapsuleAButton") as GameObject).GetComponent<Button>().onClick.AddListener(()=>{AddPrefab("CapsuleA");});
+	}
+
+	public void AddPrefab (string name) {
+		GameObject prefab = PrefabDict[name];
+		GameObject part = GameObject.Instantiate(prefab);
+		part.transform.parent = ShipContainer.transform;
 	}
 }
