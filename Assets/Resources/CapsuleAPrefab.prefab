@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -116,8 +116,7 @@ MonoBehaviour:
   partState: 0
   mass: 1
   centerOfMass: {x: 0, y: 0}
-  connectingParts:
-  - {fileID: 0}
+  connectingParts: []
 --- !u!212 &212598295637078326
 SpriteRenderer:
   m_ObjectHideFlags: 1

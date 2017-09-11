@@ -76,6 +76,6 @@ public class Editor {
 			}
 		}
 		ActivePart = part;
-		part.transform.parent = ShipContainer.transform;
+		part.transform.parent = Ship.transform;
 	}
 }

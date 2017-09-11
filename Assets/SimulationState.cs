@@ -52,28 +52,28 @@ public class SimulationState : GameState
 
 
     GameObject ship = GameObject.Find("Player");
-    ShipClass shipComp = ship.GetComponent<ShipClass>();
-    LaunchStage newStage = new LaunchStage();
-    List<ShipPart> partList = newStage.parts;
-    ShipPart part = (ShipPart)ship.GetComponent<CabinPart>();
-    if(part) 
-    {
-      partList.Add(part);
-    }
+    // ShipClass shipComp = ship.GetComponent<ShipClass>();
+    // LaunchStage newStage = new LaunchStage();
+    // List<ShipPart> partList = newStage.parts;
+    // ShipPart part = (ShipPart)ship.GetComponent<CabinPart>();
+    // if(part) 
+    // {
+    //   partList.Add(part);
+    // }
 
-    GameObject engineObj = GameObject.Find("Engine");
-    part = engineObj.GetComponent<ShipPart>();
-    if(part) 
-    {
-      partList.Add(part);
-    }
-    GameObject fuelObj = GameObject.Find("FuelTank");
-    part = fuelObj.GetComponent<ShipPart>();
-    if(part) 
-    {
-      partList.Add(part);
-    }
-    shipComp.stages.Add(newStage);
+    // GameObject engineObj = GameObject.Find("Engine");
+    // part = engineObj.GetComponent<ShipPart>();
+    // if(part) 
+    // {
+    //   partList.Add(part);
+    // }
+    // GameObject fuelObj = GameObject.Find("FuelTank");
+    // part = fuelObj.GetComponent<ShipPart>();
+    // if(part) 
+    // {
+    //   partList.Add(part);
+    // }
+    // shipComp.stages.Add(newStage);
     Debug.Log("sim");
 
     planetPosition.x = Random.Range(-10000.0f, 10000.0f);
