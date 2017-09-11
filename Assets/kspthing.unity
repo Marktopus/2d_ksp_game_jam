@@ -305,8 +305,7 @@ MonoBehaviour:
   mass: 1
   centerOfMass: {x: 0, y: 0}
   connectingParts: []
-  fuelParts:
-  - {fileID: 2060387160}
+  fuelParts: []
   consumptionRate: 0.1
   massToForce: 500000
 --- !u!212 &79992625
@@ -1657,8 +1656,7 @@ MonoBehaviour:
   partState: 0
   mass: 1
   centerOfMass: {x: 0, y: 0}
-  connectingParts:
-  - {fileID: 79992624}
+  connectingParts: []
   fuelMass: 10
 --- !u!212 &2060387161
 SpriteRenderer:

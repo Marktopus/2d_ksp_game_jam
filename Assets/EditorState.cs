@@ -7,11 +7,13 @@ public class EditorState : GameState
 {
   GameObject EditorUI;
   GameObject World;
+  GameObject Player;
   Editor Editor;
 
   public EditorState () : base () {
     World = GameObject.Find("World");
-    Editor = new Editor(World);
+    Player = GameObject.Find("Player");
+    Editor = new Editor(World, Player);
     EditorUI = GameObject.Find("EditorUI");
     EditorUI.SetActive(false);
   }

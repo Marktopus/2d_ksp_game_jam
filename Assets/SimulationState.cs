@@ -60,6 +60,7 @@ public class SimulationState : GameState
     {
       partList.Add(part);
     }
+
     GameObject engineObj = GameObject.Find("Engine");
     part = engineObj.GetComponent<ShipPart>();
     if(part) 
